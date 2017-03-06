@@ -1,0 +1,26 @@
+#radar{
+	width: 800px;
+}
+.container{
+	text-align: center;
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+}
+#blip{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: red;
+	border-radius: 10px;
+	display: none;
+}
+.missle{
+	text-align: center;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+}

@@ -62,23 +62,27 @@ button{
 #end{
 	width: 100%;
 	position: absolute;
-	z-index: 100;
+	z-index: 250;
 }
 #leftside{
 	position: absolute;
 	left: -250px;
-	top: 320px;
+	top: 325px;
 	z-index: 200;
 	width: 120px;
 }
 #rightside{
 	position: absolute;
 	right: -250px;
-	top: 320px;
+	top: 325px;
 	z-index: 200;
 	width: 120px;
 }
-
+#counter{
+	color: red;
+	position: relative;
+	font-size: 20px;
+}
 
 
 

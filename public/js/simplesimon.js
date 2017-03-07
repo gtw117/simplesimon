@@ -1,5 +1,7 @@
 //dont be pleb!
 //git gud
+//--------------global variables-----------------------------------
+var wave = $("#wave")
 var backgroundSound = new Audio("/sounds/background.mp3");
 var scanBtn = $("#scan");
 var blipX = 0;
@@ -7,21 +9,16 @@ var blipY = 0;
 var quadrant = 0;
 var blip = $("#blip");
 var output = [];
-
-
 var userScore = 0;
 var userClick = [];
 var launchDefense = $("#fire");
 var reset = $("#reset");
-
-
-
 var mq1 = $("#mq1");
 var mq2 = $("#mq2");
 var mq3 = $("#mq3");
 var mq4 = $("#mq4");
 
-
+//----------------sector selectors---------------------------------
 mq1.click(function(event){
 	userClick.push(1);
 	console.log(userClick);
@@ -41,13 +38,9 @@ mq4.click(function(event){
 	userClick.push(4);
 	console.log(userClick);
 });
-//----------------------------experimental---------------------
+//----------------------------playback, blip placement function---------------------
 
 function playback(){
-	//iterate across the output array
-	//animate each blip for a second
-	//move to next blip and animate for a second
-	//last blip stays on the screen
 	var i = 0;
 	var intervalId = setInterval(function(){
 		if (i < output.length) {
@@ -68,7 +61,6 @@ function playback(){
 		}
 	}, 2500);
 }
-
 
 //------------------------------------------------
 //COMPUTER
@@ -96,14 +88,10 @@ scanBtn.click(function(event){
 		quadrant = 4;
 	}
 
-	//randomly get new blip location
-	//push blip location to array
-
 	var newBlip = {};
 	newBlip.y = blipY;
 	newBlip.x = blipX;
 	newBlip.quadrant = quadrant
-
 
 	output.push(newBlip);
 
@@ -111,7 +99,6 @@ scanBtn.click(function(event){
 
 	userClick = []
 });
-
 
 //-----------------------------------------------------------
 // SCORE KEEPER
@@ -126,26 +113,28 @@ function arraysAreSame(){
 		return true;
 	}
 }
-
+//---------initiates player selection comparison to output-------------
 launchDefense.click(function(){
 	if(arraysAreSame()){
 	console.log("you're winning");
+	wave.html(output.length);
 } else {
 	console.log("base destroyed");
 	lose();
 }
 });
-
+//-------------reset-----------------
 reset.click(function(){
 	output = [];
 	userClick = [];
 	quadrants = [];
 	backgroundSound.volume = 1;
+	wave.html(0);
 	blip.css({
 		display: "none"
 	});
 })
-
+//----------sounds-----------------------------
 //use theme from battlefield 1942 for background music
 function startupSound(){
 	

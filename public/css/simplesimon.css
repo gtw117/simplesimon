@@ -41,7 +41,10 @@ html{
 	left: -275px;
 }
 
-#radar {
+#radar{
 	width: 1180px;
 	height: 850px;
+}
+#end{
+	width: 100%;
 }

@@ -66,7 +66,7 @@ function playback(){
 		} else {
 			clearInterval(intervalId);
 		}
-	}, 1000);
+	}, 2500);
 }
 
 
@@ -76,6 +76,9 @@ scanBtn.click(function(event){
 
 	var sonarPing = new Audio("/sounds/sonarping.wav");
 	sonarPing.play();
+	setTimeout(function(){
+		sonarPing.play()
+	}, 1500);
 
 	blipX = Math.floor(Math.random() * 600) +1;
 	console.log(blipX);

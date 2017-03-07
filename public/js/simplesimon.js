@@ -1,6 +1,6 @@
 //dont be pleb!
 //git gud
-
+var backgroundSound = new Audio("/sounds/background.mp3");
 var scanBtn = $("#scan");
 var blipX = 0;
 var blipY = 0;
@@ -132,6 +132,7 @@ launchDefense.click(function(){
 	console.log("you're winning");
 } else {
 	console.log("base destroyed");
+	lose();
 }
 });
 
@@ -139,15 +140,27 @@ reset.click(function(){
 	output = [];
 	userClick = [];
 	quadrants = [];
+	backgroundSound.volume = 1;
+	blip.css({
+		display: "none"
+	});
 })
 
 //use theme from battlefield 1942 for background music
 function startupSound(){
-	var backgroundSound = new Audio("/sounds/background.mp3");
+	
 
 	backgroundSound.play();
 }
 
+function lose(){
+	var video = $("#video");
+	backgroundSound.volume = 0;
+	video.html('<video id="end" autoplay><source src="/videos/endbomb.mp4" type="video/mp4"></video>');
+	setTimeout(function(){
+		video.html('');
+	}, 20000);
+} 
 startupSound();
 
 

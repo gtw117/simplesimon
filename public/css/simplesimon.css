@@ -47,4 +47,6 @@ html{
 }
 #end{
 	width: 100%;
+	position: absolute;
+	z-index: 100;
 }

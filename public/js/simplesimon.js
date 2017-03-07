@@ -1,7 +1,6 @@
 //dont be pleb!
 //git gud
 
-
 var scanBtn = $("#scan");
 var blipX = 0;
 var blipY = 0;
@@ -12,7 +11,8 @@ var output = [];
 
 var userScore = 0;
 var userClick = [];
-var launchDefense = $("#fire")
+var launchDefense = $("#fire");
+var reset = $("#reset");
 
 
 
@@ -129,7 +129,11 @@ launchDefense.click(function(){
 }
 });
 
-
+reset.click(function(){
+	output = [];
+	userClick = [];
+	quadrants = [];
+})
 
 //use theme from battlefield 1942 for background music
 

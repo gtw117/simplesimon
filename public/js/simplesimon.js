@@ -73,7 +73,10 @@ function playback(){
 //------------------------------------------------
 //COMPUTER
 scanBtn.click(function(event){
-	
+
+	var sonarPing = new Audio("/sounds/sonarping.wav");
+	sonarPing.play();
+
 	blipX = Math.floor(Math.random() * 600) +1;
 	console.log(blipX);
 
@@ -136,6 +139,14 @@ reset.click(function(){
 })
 
 //use theme from battlefield 1942 for background music
+function startupSound(){
+	var backgroundSound = new Audio("/sounds/background.mp3");
+
+	backgroundSound.play();
+}
+
+startupSound();
+
 
 
 

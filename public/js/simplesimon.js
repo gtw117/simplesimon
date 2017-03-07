@@ -74,19 +74,19 @@ function playback(){
 //COMPUTER
 scanBtn.click(function(event){
 	
-	blipX = Math.floor(Math.random() * 800) +1;
+	blipX = Math.floor(Math.random() * 600) +1;
 	console.log(blipX);
 
-	blipY = Math.floor(Math.random() * 800) +1;
+	blipY = Math.floor(Math.random() * 830) +1;
 	console.log(blipY);
 
-	if (blipX < 400 && blipY <= 400){
+	if (blipX < 305 && blipY <= 403){
 		quadrant = 1;
-	} else if(blipX > 400 && blipY <= 400){
+	} else if(blipX > 305 && blipY <= 403){
 		quadrant = 2;
-	}else if(blipX > 400 && blipY >= 400){
+	}else if(blipX > 305 && blipY >= 403){
 		quadrant = 3;
-	}else if(blipX < 400 && blipY >= 400){
+	}else if(blipX < 305 && blipY >= 403){
 		quadrant = 4;
 	}
 

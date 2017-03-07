@@ -1,3 +1,4 @@
+
 html{
 	background: black;
 }
@@ -7,7 +8,7 @@ html{
 .container{
 	text-align: center;
 	position: relative;
-	width: 800px;
+	width: 630px;
 	margin: 0 auto;
 }
 #blip{
@@ -19,6 +20,7 @@ html{
 	background: red;
 	border-radius: 10px;
 	display: none;
+	z-index: 50;
 }
 .missle{
 	text-align: center;
@@ -29,4 +31,17 @@ html{
 }
 .buttonsContainer{
 	text-align: center;
+}
+.imgcontainer{
+	width: 1180px;
+	height: 850px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	left: -275px;
+}
+
+#radar {
+	width: 1180px;
+	height: 850px;
 }
